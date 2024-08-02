@@ -25,5 +25,5 @@ func (h *Handlers) AddUserHandler(reader *bufio.Reader) {
 		return
 	}
 
-	fmt.Printf("Пользователь добавлен. ID пользователя: %d\n", id)
+	fmt.Printf("\nПользователь добавлен. ID пользователя: %d\n", id)
 }

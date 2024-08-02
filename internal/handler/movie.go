@@ -25,14 +25,14 @@ func (h *Handlers) AddMovieHandler(reader *bufio.Reader) {
 		return
 	}
 
-	fmt.Printf("Фильм добавлен. ID фильма: %d\n", id)
+	fmt.Printf("\nФильм добавлен. ID фильма: %d\n", id)
 }
 
 func (h *Handlers) ShowAllMoviesHandler(reader *bufio.Reader) {
 	movies := h.System.ShowAllMovies()
 
 	if len(movies) == 0 {
-		fmt.Println("Нет доступных фильмов.")
+		fmt.Println("На данный момент нет доступных фильмов.")
 		return
 	}
 

@@ -53,19 +53,38 @@ Instructions on how to install the application.
 
 ### Examples
 
-- Select the first option, and you will be prompted to type a movie name in order to add it to the system. You will receive the ID of the movie, which can be used to buy a ticket.
+- Select the third option, and you will be prompted to type a user in order to add it to the system. You will receive the ID of the user, which can be used later to buy a ticket.
 
    ```sh
-   Выберите опцию: 1
+   Выберите опцию: 3
 
-   Введите название фильма (или введите -1 чтобы вернуться в меню): The Inception
-   Фильм добавлен. ID фильма: 1
+   Введите имя пользователя (или введите -1 чтобы вернуться в меню): Alice
+   Пользователь добавлен. ID пользователя: 1
+   ```
+
+- Select the fourth option, and you will be prompted to type user ID and movie ID in order to purchase a ticket. You will receive the ID of the ticket, which can be used later to cancel the purchase.
+
+   ```sh
+   Выберите опцию: 4
+   
+   Введите ID пользователя (или введите -1 чтобы вернуться в меню): 1
+   Введите ID фильма (или введите -1 чтобы вернуться в меню): 1
+   Билет успешно оформлен. ID билета: 1
+   ```
+
+- Select the fifth option, and you will be prompted to type user ID and movie ID in order to purchase a ticket. You will receive the ID of the ticket, which can be used later to cancel the purchase.
+
+   ```sh
+   Выберите опцию: 5
+   
+   Введите ID билета (или введите -1 чтобы вернуться в меню): 1
+   Покупка билета отменена.
    ```
 
 ## Features
 
 - Adding a movie to the system.
 - Viewing all available movies in the system.
-- Adding a user to the system.
-- Buying a ticket in the system.
-- Cancelling a ticket in the system.
+- Registering a user in the system.
+- Purchasing a ticket in the system.
+- Cancelling ticket purchases in the system.

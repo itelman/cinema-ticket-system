@@ -11,6 +11,12 @@ import (
 )
 
 func (h *Handlers) BuyTicketHandler(reader *bufio.Reader) {
+	if len(h.System.Users) == 0 || len(h.System.Movies) == 0 {
+		fmt.Println("На данный момент невозможно оформить билеты, поскольку нет списка доступных пользователей/фильмов.")
+		h.SetDelay()
+		return
+	}
+
 	fmt.Print("Введите ID пользователя (или введите -1 чтобы вернуться в меню): ")
 	userID, _ := reader.ReadString('\n')
 	userID = strings.TrimSpace(userID)
@@ -55,10 +61,16 @@ func (h *Handlers) BuyTicketHandler(reader *bufio.Reader) {
 		return
 	}
 
-	fmt.Printf("Билет успешно оформлен. ID билета: %d\n", id)
+	fmt.Printf("\nБилет успешно оформлен. ID билета: %d\n", id)
 }
 
 func (h *Handlers) CancelTicketHandler(reader *bufio.Reader) {
+	if len(h.System.Tickets) == 0 {
+		fmt.Println("На данный момент не оформлены никакие билеты.")
+		h.SetDelay()
+		return
+	}
+
 	fmt.Print("Введите ID билета (или введите -1 чтобы вернуться в меню): ")
 	ticketID, _ := reader.ReadString('\n')
 	ticketID = strings.TrimSpace(ticketID)
@@ -75,13 +87,13 @@ func (h *Handlers) CancelTicketHandler(reader *bufio.Reader) {
 		return
 	}
 
-	ok := h.System.CancelTicket(ticket_id)
-	if !ok {
+	exists := h.System.CancelTicket(ticket_id)
+	if !exists {
 		response.NotFoundError()
 		h.SetDelay()
 		h.CancelTicketHandler(reader)
 		return
 	}
 
-	fmt.Println("Покупка билета отменена.")
+	fmt.Println("\nПокупка билета отменена.")
 }
