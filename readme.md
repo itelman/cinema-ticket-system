@@ -1,6 +1,6 @@
 # Cinema Ticket System
 
-This application manages information about movie tickets. It allows adding movies, registering users, purchasing tickets, and canceling ticket purchases.
+This application manages information about movie tickets. It allows adding movies, registering users, purchasing tickets, and cancelling ticket purchases.
 
 ## Installation
 
@@ -53,7 +53,7 @@ Instructions on how to install the application.
 
 ### Examples
 
-- Select the third option, and you will be prompted to type a user in order to add it to the system. You will receive the ID of the user, which can be used later to buy a ticket.
+- Select the third option, and you will be prompted to type a user in order to add it to the system. You will receive the ID of the user, which can be used later to purchase a ticket.
 
    ```sh
    Выберите опцию: 3
@@ -74,13 +74,13 @@ Instructions on how to install the application.
    Билет успешно оформлен. ID билета: 1
    ```
 
-- Select the fifth option, and you will be prompted to type user ID and movie ID in order to purchase a ticket. You will receive the ID of the ticket, which can be used later to cancel the purchase.
+- Select the fifth option, and you will be prompted to type ticket ID in order to cancel the purchase.
 
    ```sh
    Выберите опцию: 5
    
    Введите ID билета (или введите -1 чтобы вернуться в меню): 1
-   
+
    Покупка билета отменена.
    ```
 
